@@ -15,7 +15,7 @@ has_curl=$?
 exists git
 has_git=$?
 
-exist zsh
+exists zsh
 has_zsh=$?
 
 
@@ -35,4 +35,10 @@ else
 fi
 
 #copy powerlevel10k zsh-theme
-curl -LSso ~/.oh-my-zsh/themes/powerlevel10k.zsh-theme https://raw.githubusercontent.com/romkatv/powerlevel10k/master/powerlevel10k.zsh-theme
+git clone --depth=1 "https://github.com/romkatv/powerlevel10k.git" ~/.oh-my-zsh/custom/themes/powerlevel10k
+
+#copy .zshrc
+curl -LSso ~/.zshrc "https://raw.githubusercontent.com/tsengvn/config/main/.zshrc"
+
+#copy p10k config
+curl -LSso ~/.p10k.zsh "https://raw.githubusercontent.com/tsengvn/config/main/.p10k.zsh"
